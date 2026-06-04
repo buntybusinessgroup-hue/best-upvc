@@ -113,7 +113,53 @@ document.addEventListener('DOMContentLoaded', () => {
                     end: "right left",
                     scrub: 1
                 }
+                }
             });
+        }
+
+        // 3. Immersive Window Audio Experience
+        const immersiveWrapper = document.querySelector('.immersive-window-wrapper');
+        const cityAudio = document.getElementById('city-audio');
+        const audioOverlay = document.getElementById('audio-start-overlay');
+        const startAudioBtn = document.getElementById('start-audio-btn');
+
+        if (immersiveWrapper && cityAudio) {
+            // Set initial volume low (muffled)
+            cityAudio.volume = 0.1;
+
+            // Handle user interaction required for audio playback
+            if (startAudioBtn) {
+                startAudioBtn.addEventListener('click', () => {
+                    cityAudio.play().then(() => {
+                        audioOverlay.style.opacity = '0';
+                        setTimeout(() => audioOverlay.style.display = 'none', 500);
+                    }).catch(e => console.log("Audio play failed:", e));
+                });
+            }
+
+            const immersiveTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".immersive-window-wrapper",
+                    start: "top top",
+                    end: "bottom bottom",
+                    scrub: 1,
+                    onUpdate: (self) => {
+                        // Map progress (0 to 1) to volume (0.1 to 1.0)
+                        if (!cityAudio.paused) {
+                            let newVol = 0.1 + (self.progress * 0.9);
+                            cityAudio.volume = Math.min(Math.max(newVol, 0), 1);
+                        }
+                    }
+                }
+            });
+
+            // Animate panes sliding apart
+            immersiveTl.to(".immersive-left-pane", { xPercent: -100, duration: 1 })
+                       .to(".immersive-right-pane", { xPercent: 100, duration: 1 }, "<")
+                       // Fade out blur effect on glass as it opens (simulate clarity)
+                       .to(".immersive-pane", { backdropFilter: "blur(0px)", duration: 1 }, "<")
+                       // Fade in text
+                       .to(".view-text-overlay", { opacity: 1, duration: 0.5 }, "-=0.5");
         }
     }
 

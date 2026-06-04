@@ -49,11 +49,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+                entry.target.classList.add('is-visible');
+                // Optional: Stop observing once visible if you only want it to animate once
+                // observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    const animatedElements = document.querySelectorAll('.slide-up, .fade-in');
+    const animatedElements = document.querySelectorAll('.animate-on-scroll, .slide-up, .fade-in');
     animatedElements.forEach(el => observer.observe(el));
 });

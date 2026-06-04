@@ -7,9 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css?v=2">
-    <!-- GSAP & ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
@@ -30,183 +27,115 @@
         </div>
     </header>
 
-    <!-- Master Hero & Values Sticky Reveal -->
-    <section class="hero-reveal-container">
-        <!-- Sticky Background Layer -->
-        <div class="hero-bg-sticky">
-            <div class="hero-bg-image" style="background-image: url('https://labs.google.com/pomelli_downloads/websites/8SdR1MU08XD0_xUsEak_8u/resources/82-m_VAglUheWzV81_Z_dC?authuser=0');"></div>
-            <!-- Overlay to darken background when cards slide up -->
-            <div class="hero-bg-overlay"></div>
-        </div>
-
-        <!-- Scrollable Content Layer -->
-        <div class="hero-scroll-content">
-            <!-- Hero Text (fades out as we scroll) -->
-            <div class="container hero-text-section">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-grid">
                 <div class="hero-content">
-                    <h1 class="hero-title">India's #1 Weather Resistant uPVC <span>Windows & Doors</span>.</h1>
-                    <p class="lead hero-subtitle">Tested for 25000+ hours of extreme weather & trusted by over 1 Lac homes.</p>
+                    <h1>India's #1 Weather Resistant uPVC <span>Windows & Doors</span>.</h1>
+                    <p class="lead">Tested for 25000+ hours of extreme weather & trusted by over 1 Lac homes.</p>
                 </div>
-            </div>
-
-            <!-- Value Cards (slide up over the background) -->
-            <div class="container values-section" id="values">
-                <div class="section-header values-header">
-                    <h2>Our Core Values</h2>
-                    <p>The foundation of every product and installation we deliver.</p>
-                </div>
-                <div class="values-grid">
-                    <div class="value-card">
-                        <i class="fa-solid fa-globe value-icon"></i>
-                        <h3>World's Best Raw Materials</h3>
-                        <p>Best & finest grades of raw materials sourced from Europe, processed under a PLC/SCADA based Auto Weighing & Batching System for consistent quality.</p>
-                    </div>
-                    <div class="value-card">
-                        <i class="fa-solid fa-building value-icon"></i>
-                        <h3>State of the Art Manufacturing</h3>
-                        <p>Best End to End uPVC manufacturing practices with utmost quality consciousness on each stage, from machine selection to tooling and testing equipment.</p>
-                    </div>
-                    <div class="value-card">
-                        <i class="fa-solid fa-users value-icon"></i>
-                        <h3>Strong R&D Team</h3>
-                        <p>Our trained engineers aid customers with innovative solutions, excelling at every aspect from Extrusion and Fabrication to Installation & Customer Service.</p>
+                <div class="hero-image-wrapper">
+                    <!-- Inline style for decorative background image per instructions -->
+                    <div data-alt="A close-up architectural shot of a pristine white window frame corner against a pane of glass. A sharp ray of natural sunlight hits the frame, casting a geometric shadow. Subtle reflections of navy blue and a hint of warm golden yellow are visible in the glass. Clean, modern, minimalist style emphasizing precision and build quality. No text, signage, or lettering." style="background-image: url('https://labs.google.com/pomelli_downloads/websites/8SdR1MU08XD0_xUsEak_8u/resources/82-m_VAglUheWzV81_Z_dC?authuser=0'); background-size: cover; background-position: center; position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Horizontal Scroll Solutions Section -->
-    <section class="horizontal-scroll-wrapper" id="products">
-        <div class="horizontal-sticky-container">
-            <div class="horizontal-track">
-                
-                <!-- Panel 1: Intro -->
-                <div class="horizontal-panel intro-panel">
+    <!-- Core Values -->
+    <section id="values" class="values-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Core Values</h2>
+                <p>The foundation of every product and installation we deliver.</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="fa-solid fa-globe value-icon"></i>
+                    <h3>World's Best Raw Materials</h3>
+                    <p>Best & finest grades of raw materials sourced from Europe, processed under a PLC/SCADA based Auto Weighing & Batching System for consistent quality.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fa-solid fa-building value-icon"></i>
+                    <h3>State of the Art Manufacturing</h3>
+                    <p>Best End to End uPVC manufacturing practices with utmost quality consciousness on each stage, from machine selection to tooling and testing equipment.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fa-solid fa-users value-icon"></i>
+                    <h3>Strong R&D Team</h3>
+                    <p>Our trained engineers aid customers with innovative solutions, excelling at every aspect from Extrusion and Fabrication to Installation & Customer Service.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Overview -->
+    <section id="products" class="products-section section-padding">
+        <div class="container">
+            <div class="products-grid">
+                <div class="products-content">
                     <div class="section-header" style="text-align: left;">
                         <h2>Premium Solutions</h2>
                         <p>We offer a comprehensive range of uPVC doors and windows crafted to enhance the beauty, comfort, and security of your home, tested beyond European standards.</p>
                     </div>
-                </div>
-
-                <!-- Panel 2: UV Resistance -->
-                <div class="horizontal-panel feature-panel">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-sun feature-icon-large"></i>
-                        <h4>UV Resistance</h4>
-                        <p>Prominance windows offer 100% UV resistance with the right amount of TiO2, which helps in retaining whiteness against exposure to the sun.</p>
-                    </div>
-                </div>
-
-                <!-- Panel 3: Soundproofing (Before/After) -->
-                <div class="horizontal-panel feature-panel soundproof-panel">
-                    <div class="feature-card split-card">
-                        <div class="card-text">
-                            <i class="fa-solid fa-volume-xmark feature-icon-large"></i>
-                            <h4>Soundproofing</h4>
-                            <p>Double glazed Prominance Windows are more effective in reducing the noise that can enter your home. This is especially helpful for those who live near airports.</p>
-                        </div>
-                        <div class="card-visual">
-                            <!-- Visual overlay to be animated by GSAP -->
-                            <div class="sound-visual-outside">Street Noise</div>
-                            <div class="sound-visual-inside">Quiet Comfort</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Panel 4: Air Quality -->
-                <div class="horizontal-panel feature-panel">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-thumbs-up feature-icon-large"></i>
-                        <h4>Indoor Air Quality</h4>
-                        <p>Avoid interior energy loss (generally 37% through windows). Prominance windows reduce energy loss by over 30% thereby reducing energy costs.</p>
-                    </div>
-                </div>
-
-                <!-- Panel 5: Promo Images -->
-                <div class="horizontal-panel promo-panel">
-                    <div class="promotional-materials horizontal-promo">
-                        <div class="promo-img">
-                            <img src="https://labs.google.com/pomelli_downloads/websites/8SdR1MU08XD0_xUsEak_8u/resources/8CNnSVFpAHl3TD6AkPiOn8?authuser=0" alt="Promotional flyer">
-                        </div>
-                        <div class="promo-img">
-                            <img src="https://labs.google.com/pomelli_downloads/websites/8SdR1MU08XD0_xUsEak_8u/resources/9vis9NVYWEB46zVS7k4kGt?authuser=0" alt="Promotional flyer showing sliding windows">
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Immersive Window Audio Experience -->
-    <section class="immersive-window-wrapper" id="immersive-experience">
-        <div class="immersive-sticky-container">
-            
-            <!-- Audio Element (City Traffic) -->
-            <audio id="city-audio" loop preload="auto">
-                <source src="https://assets.mixkit.co/active_storage/sfx/256/256-preview.mp3" type="audio/mpeg">
-            </audio>
-
-            <!-- Audio interaction overlay (required by browsers to play audio) -->
-            <div id="audio-start-overlay" class="audio-overlay">
-                <button id="start-audio-btn" class="btn-primary"><i class="fa-solid fa-volume-high"></i> Enable Sound Experience</button>
-            </div>
-
-            <!-- The Scenic View (Background) -->
-            <div class="immersive-view-bg" style="background-image: url('https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=1920&q=80');">
-                <div class="view-text-overlay">
-                    <h2 class="view-title">Bring the outside in.</h2>
-                    <p class="view-subtitle">On your terms.</p>
-                </div>
-            </div>
-
-            <!-- The Window Frame & Panes (Foreground) -->
-            <div class="immersive-frame">
-                <!-- Left Pane -->
-                <div class="immersive-pane immersive-left-pane">
-                    <div class="pane-glass">
-                        <div class="pane-reflection"></div>
-                    </div>
-                    <div class="pane-handle"></div>
+                    
+                    <ul class="feature-list">
+                        <li>
+                            <i class="fa-solid fa-sun"></i>
+                            <div>
+                                <h4>UV Resistance</h4>
+                                <p>Prominance windows offer 100% UV resistance with the right amount of TiO2, which helps in retaining whiteness against exposure to the sun.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-volume-xmark"></i>
+                            <div>
+                                <h4>Soundproofing</h4>
+                                <p>Double glazed Prominance Windows are more effective in reducing the noise that can enter your home. This is especially helpful for those who live near airports.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-thumbs-up"></i>
+                            <div>
+                                <h4>Indoor Air Quality</h4>
+                                <p>Avoid interior energy loss (generally 37% through windows). Prominance windows reduce energy loss by over 30% thereby reducing energy costs.</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
                 
-                <!-- Right Pane -->
-                <div class="immersive-pane immersive-right-pane">
-                    <div class="pane-glass">
-                        <div class="pane-reflection"></div>
+                <div class="promotional-materials">
+                    <div class="promo-img">
+                        <img src="https://labs.google.com/pomelli_downloads/websites/8SdR1MU08XD0_xUsEak_8u/resources/8CNnSVFpAHl3TD6AkPiOn8?authuser=0" alt="Promotional flyer detailing UPVC door and window installations, sound insulation, and thermal efficiency">
                     </div>
-                    <div class="pane-handle right"></div>
+                    <div class="promo-img">
+                        <img src="https://labs.google.com/pomelli_downloads/websites/8SdR1MU08XD0_xUsEak_8u/resources/9vis9NVYWEB46zVS7k4kGt?authuser=0" alt="Promotional flyer showing sliding windows, casement windows, and glass doors integrated into modern landscapes">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Quality Detail: Split-Screen Scroll -->
-    <section class="split-scroll-section">
-        <div class="split-container">
-            <div class="split-left">
-                <div class="sticky-image-wrapper">
-                    <img src="https://labs.google.com/pomelli_downloads/websites/8SdR1MU08XD0_xUsEak_8u/resources/9tfEbZrJylfcTC7uwwWkRd?authuser=0" alt="Abstract concept of thermal insulation">
+    <!-- Quality Detail -->
+    <section class="detail-section section-padding">
+        <div class="container">
+            <div class="detail-grid">
+                <div class="detail-image">
+                     <img src="https://labs.google.com/pomelli_downloads/websites/8SdR1MU08XD0_xUsEak_8u/resources/9tfEbZrJylfcTC7uwwWkRd?authuser=0" alt="Abstract concept of thermal insulation" data-alt="Macro photography of layered glass panes demonstrating thermal insulation. Warm amber and golden light glows between the layers, while the outer edges are in cool, deep navy shadows. Crisp edges, technical yet artistic composition, conveying energy efficiency and modern engineering. No text, signage, or lettering." style="object-fit: cover; width: 100%; height: auto;">
                 </div>
-            </div>
-            <div class="split-right">
-                <div class="split-content">
-                    <h2 class="split-title">Efficiency in every frame.</h2>
-                    <p class="split-para">Modern homes require robust solutions. As India's largest manufacturer of uPVC Windows and Doors, our profiles are meticulously engineered to provide superior structural integrity while maximizing light and minimizing energy loss.</p>
-                    <p class="split-para">Experience the perfect balance of aesthetics and mechanical performance that surpasses global benchmarks. Trusted by India's reputed builders, our completely lead-free windows provide clear, clean lines defining contemporary living.</p>
+                <div class="detail-content" style="padding-left: 2rem;">
+                    <h2>Efficiency in every frame.</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 2rem;">Modern homes require robust solutions. As India's largest manufacturer of uPVC Windows and Doors, our profiles are meticulously engineered to provide superior structural integrity while maximizing light and minimizing energy loss.</p>
+                    <p>Experience the perfect balance of aesthetics and mechanical performance that surpasses global benchmarks. Trusted by India's reputed builders, our completely lead-free windows provide clear, clean lines defining contemporary living.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact & Service Areas (Inside Sliding Window) -->
-    <section class="window-scroll-track" id="contact-scroll-track">
-        <div class="window-sticky-container">
-            <div class="sliding-window">
-                <!-- The Content Behind the Window -->
-                <div class="window-content-behind">
-                    <div class="contact-section">
+    <!-- Contact & Service Areas -->
+    <section class="contact-section">
         <div class="container">
             <div class="section-header">
                 <h2>Contact Us</h2>
@@ -275,26 +204,6 @@
                 </div>
             </div>
         </div>
-                    </div>
-                </div>
-                
-                <!-- The Window Panels (Foreground) -->
-                <div class="window-frame">
-                    <div class="window-panel left-panel">
-                        <div class="glass-pane">
-                            <div class="reflection"></div>
-                        </div>
-                        <div class="handle left-handle"></div>
-                    </div>
-                    <div class="window-panel right-panel">
-                        <div class="glass-pane">
-                            <div class="reflection"></div>
-                        </div>
-                        <div class="handle right-handle"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 
     <!-- Footer -->
@@ -344,5 +253,5 @@
             <i class="fa-solid fa-phone"></i>
         </a>
     </div>
-    <script src="script.js"></script>
+
 </body></html>

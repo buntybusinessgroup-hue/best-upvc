@@ -73,11 +73,18 @@
             left: 0;
             width: 100%;
             height: var(--header-height);
-            background-color: var(--bg-light);
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            background-color: transparent;
+            box-shadow: none;
             z-index: 300;
             display: flex;
             align-items: center;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
         }
 
         .header-content {
@@ -165,7 +172,7 @@
         .hero-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            min-height: calc(100vh - var(--header-height));
+            min-height: 100vh;
         }
 
         .hero-content {

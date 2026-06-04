@@ -56,4 +56,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const animatedElements = document.querySelectorAll('.slide-up, .fade-in');
     animatedElements.forEach(el => observer.observe(el));
+
+    // Scroll-Animated Window Logic
+    const windowTrack = document.getElementById('contact-scroll-track');
+    const stickyContainer = document.querySelector('.window-sticky-container');
+
+    if (windowTrack && stickyContainer) {
+        window.addEventListener('scroll', () => {
+            const trackRect = windowTrack.getBoundingClientRect();
+            
+            // The total scrollable distance within the track
+            const scrollDistance = windowTrack.offsetHeight - window.innerHeight;
+            
+            // Approximate header height where sticky triggers
+            const headerHeight = 100;
+            
+            // Progress starts when trackTop reaches the header
+            let progress = (headerHeight - trackRect.top) / scrollDistance;
+            
+            // Clamp progress between 0 and 1
+            progress = Math.max(0, Math.min(1, progress));
+            
+            // Update the CSS variable
+            stickyContainer.style.setProperty('--scroll-progress', progress);
+            
+            // Disable pointer events on panels when fully open so users can interact with the form
+            const panels = document.querySelectorAll('.window-panel');
+            if (progress > 0.9) {
+                panels.forEach(p => p.style.pointerEvents = 'none');
+            } else {
+                panels.forEach(p => p.style.pointerEvents = 'auto');
+            }
+        });
+    }
 });

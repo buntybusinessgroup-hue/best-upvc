@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Navbar scroll effect
-    const navbar = document.querySelector('header');
+    const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
@@ -39,26 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
             navbar.classList.remove('scrolled');
         }
     });
-
-    // Hero Window GSAP Animation
-    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-        gsap.registerPlugin(ScrollTrigger);
-
-        const heroTl = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".hero",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1
-            }
-        });
-
-        // Animate panes sliding apart
-        heroTl.to(".hero-left-pane", { xPercent: -100, duration: 1 })
-              .to(".hero-right-pane", { xPercent: 100, duration: 1 }, "<")
-              // Fade out blur effect on glass as it opens (simulate clarity)
-              .to(".hero-pane", { backdropFilter: "blur(0px)", duration: 1 }, "<");
-    }
 
     // Intersection Observer for scroll animations
     const observerOptions = {

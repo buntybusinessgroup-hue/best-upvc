@@ -7,9 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css?v=2">
-    <!-- GSAP & ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
@@ -30,37 +27,20 @@
         </div>
     </header>
 
-    <!-- Full-Screen Hero Window -->
+    <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-sticky-container">
-            
-            <!-- The Scenic View Reveal (Background) -->
-            <div class="hero-view-bg" style="background-image: url('https://labs.google.com/pomelli_downloads/websites/8SdR1MU08XD0_xUsEak_8u/resources/82-m_VAglUheWzV81_Z_dC?authuser=0');">
-            </div>
-
-            <!-- The Hero Text (Sits between the window and the background) -->
-            <div class="hero-text-overlay">
-                <h1>India's #1 Weather Resistant uPVC <span>Windows & Doors</span>.</h1>
-                <p class="lead">Tested for 25000+ hours of extreme weather & trusted by over 1 Lac homes.</p>
-            </div>
-
-            <!-- The Window Frame & Panes (Foreground) -->
-            <div class="hero-frame">
-                <div class="hero-pane hero-left-pane">
-                    <div class="pane-glass">
-                        <div class="pane-reflection"></div>
-                    </div>
-                    <div class="pane-handle"></div>
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1>India's #1 Weather Resistant uPVC <span>Windows & Doors</span>.</h1>
+                    <p class="lead">Tested for 25000+ hours of extreme weather & trusted by over 1 Lac homes.</p>
                 </div>
-                
-                <div class="hero-pane hero-right-pane">
-                    <div class="pane-glass">
-                        <div class="pane-reflection"></div>
+                <div class="hero-image-wrapper">
+                    <!-- Inline style for decorative background image per instructions -->
+                    <div class="kenburns-bg" data-alt="A close-up architectural shot of a pristine white window frame corner against a pane of glass. A sharp ray of natural sunlight hits the frame, casting a geometric shadow. Subtle reflections of navy blue and a hint of warm golden yellow are visible in the glass. Clean, modern, minimalist style emphasizing precision and build quality. No text, signage, or lettering." style="background-image: url('https://labs.google.com/pomelli_downloads/websites/8SdR1MU08XD0_xUsEak_8u/resources/82-m_VAglUheWzV81_Z_dC?authuser=0');">
                     </div>
-                    <div class="pane-handle right"></div>
                 </div>
             </div>
-            
         </div>
     </section>
 
@@ -274,5 +254,4 @@
         </a>
     </div>
 
-    <script src="script.js?v=2"></script>
 </body></html>

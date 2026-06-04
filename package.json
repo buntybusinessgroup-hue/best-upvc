@@ -1,0 +1,11 @@
+{
+  "name": "best-upvc",
+  "version": "1.0.0",
+  "description": "Best UPVC Doors and Windows",
+  "scripts": {
+    "dev": "npx serve -s ."
+  },
+  "dependencies": {
+    "puppeteer": "^25.1.0"
+  }
+}

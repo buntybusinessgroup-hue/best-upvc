@@ -57,6 +57,66 @@ document.addEventListener('DOMContentLoaded', () => {
     const animatedElements = document.querySelectorAll('.slide-up, .fade-in');
     animatedElements.forEach(el => observer.observe(el));
 
+    // --- GSAP Animations ---
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+
+        // 1. Hero Reveal
+        const heroTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".hero-reveal-container",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1, // Smooth scrubbing
+            }
+        });
+
+        // Fade out hero text
+        heroTl.to(".hero-text-section", { opacity: 0, y: -50, duration: 1 })
+              // Scale up background image
+              .to(".hero-bg-image", { scale: 1.1, duration: 2 }, "<")
+              // Darken background
+              .to(".hero-bg-overlay", { opacity: 1, duration: 2 }, "<")
+              // Slide up value cards sequentially
+              .to(".value-card", { y: 0, opacity: 1, duration: 1, stagger: 0.2 }, "-=1");
+
+        // 2. Horizontal Scroll for Solutions
+        const horizontalTrack = document.querySelector('.horizontal-track');
+        if (horizontalTrack) {
+            function getScrollAmount() {
+                let trackWidth = horizontalTrack.scrollWidth;
+                return -(trackWidth - window.innerWidth);
+            }
+
+            const horizontalTl = gsap.to(horizontalTrack, {
+                x: getScrollAmount,
+                ease: "none"
+            });
+
+            ScrollTrigger.create({
+                trigger: ".horizontal-scroll-wrapper",
+                start: "top top",
+                end: () => `+=${getScrollAmount() * -1}`,
+                animation: horizontalTl,
+                scrub: 1,
+                invalidateOnRefresh: true
+            });
+
+            // Before/After Soundproofing Effect inside horizontal scroll
+            gsap.to(".sound-visual-inside", {
+                x: "0%", // Slide it in to cover the outside noise visual
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".soundproof-panel",
+                    containerAnimation: horizontalTl,
+                    start: "left right",
+                    end: "right left",
+                    scrub: 1
+                }
+            });
+        }
+    }
+
     // Scroll-Animated Window Logic
     const windowTrack = document.getElementById('contact-scroll-track');
     const stickyContainer = document.querySelector('.window-sticky-container');

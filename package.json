@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "description": "Best UPVC Doors and Windows",
   "scripts": {
-    "dev": "npx serve -s public"
+    "dev": "npx serve public"
   }
 }

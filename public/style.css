@@ -819,3 +819,138 @@ p {
     opacity: 1;
     transform: translateX(0);
 }
+
+/* Subpage Header */
+.subpage-header {
+    background: linear-gradient(to right, var(--text-dark), #1e293b);
+    color: var(--white);
+    padding: 120px 0 60px;
+    text-align: center;
+}
+
+.subpage-header h1 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+.subpage-header p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Product Details */
+.product-details {
+    padding: 6rem 0;
+    background-color: var(--white);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+}
+
+.feature-item {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--bg-cream);
+    border-radius: 12px;
+    border-left: 4px solid var(--primary);
+}
+
+.feature-item h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-specs {
+    position: relative;
+}
+
+.spec-card {
+    background: var(--bg-cream);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    position: sticky;
+    top: 100px;
+}
+
+.spec-card ul {
+    list-style: none;
+}
+
+.spec-card li {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-body);
+}
+
+.spec-card li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* FAQ Section */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--white);
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.faq-question:hover {
+    color: var(--primary-hover);
+}
+
+.faq-answer {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+}
+
+.faq-item.active .faq-question {
+    color: var(--primary-hover);
+    border-bottom: 1px solid var(--border);
+}
+
+.faq-item.active .faq-answer {
+    padding: 1.5rem;
+    max-height: 500px; /* Arbitrary large max-height for transition */
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}

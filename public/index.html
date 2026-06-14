@@ -39,6 +39,10 @@
     <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="apple-touch-icon" href="images/logo.png">
 
+    <!-- Preload Critical Assets for LCP -->
+    <link rel="preload" as="image" href="images/hero_bg.png">
+    <link rel="preload" as="image" href="images/logo.png">
+
     <!-- Local Business Schema -->
     <script type="application/ld+json">
     {
@@ -204,8 +208,8 @@
     <section id="about" class="about">
         <div class="container about-container">
             <div class="about-images reveal-left">
-                <img src="images/about_img_1.png" alt="Large UPVC Windows in Living Room" class="about-img-main">
-                <img src="images/about_img_2.png" alt="UPVC Window Frame Close-up" class="about-img-sub">
+                <img src="images/about_img_1.png" alt="Large UPVC Windows in Living Room" class="about-img-main" loading="lazy">
+                <img src="images/about_img_2.png" alt="UPVC Window Frame Close-up" class="about-img-sub" loading="lazy">
                 <div class="experience-badge">
                     <div class="exp-icon"><i class="fa-solid fa-award"></i></div>
                     <div class="exp-text">
@@ -354,7 +358,7 @@
                 </div>
             </div>
             <div class="contact-form-wrapper reveal-right">
-                <form class="contact-form" action="https://formsubmit.co/buntybusinessgroup@gmail.com" method="POST">
+                <form class="contact-form" action="https://hook.eu1.make.com/m149fyj18oolwfpqneekexa63gw1h6h4" method="POST">
                     <input type="hidden" name="_subject" value="New Enquiry from Best UPVC Website!">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">

@@ -4,6 +4,39 @@ if (location.protocol !== 'https:' && location.hostname !== 'localhost' && locat
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Contact Form AJAX Submission
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = contactForm.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = 'Sending... <i class="fa-solid fa-spinner fa-spin"></i>';
+            
+            const formData = new FormData(contactForm);
+            
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                btn.innerHTML = 'Sent Successfully! <i class="fa-solid fa-check"></i>';
+                btn.style.backgroundColor = '#25D366';
+                contactForm.reset();
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.backgroundColor = '';
+                }, 3000);
+            })
+            .catch(error => {
+                btn.innerHTML = 'Error! Try Again';
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                }, 3000);
+            });
+        });
+    }
+
     // Mobile Menu Toggle
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');

@@ -20,6 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: formData
             })
             .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
                 btn.innerHTML = 'Sent Successfully! <i class="fa-solid fa-check"></i>';
                 btn.style.backgroundColor = '#25D366';
                 contactForm.reset();
@@ -30,8 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .catch(error => {
                 btn.innerHTML = 'Error! Try Again';
+                btn.style.backgroundColor = '#f44336'; // Red background for error visual cue
                 setTimeout(() => {
                     btn.innerHTML = originalText;
+                    btn.style.backgroundColor = '';
                 }, 3000);
             });
         });

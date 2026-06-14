@@ -36,12 +36,12 @@
     <meta name="twitter:image" content="images/bestupvc.png">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <link rel="apple-touch-icon" href="images/logo.png">
+    <link rel="icon" type="image/webp" href="images/logo.webp">
+    <link rel="apple-touch-icon" href="images/logo.webp">
 
     <!-- Preload Critical Assets for LCP -->
-    <link rel="preload" as="image" href="images/hero_bg.png">
-    <link rel="preload" as="image" href="images/logo.png">
+    <link rel="preload" as="image" href="images/hero_bg.webp">
+    <link rel="preload" as="image" href="images/logo.webp">
 
     <!-- Local Business Schema -->
     <script type="application/ld+json">
@@ -77,12 +77,15 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
     
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
     <!-- Styles -->
+    <link rel="preload" href="style.css" as="style">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -91,7 +94,7 @@
     <nav class="navbar">
         <div class="container nav-container">
             <a href="#" class="logo">
-                <img src="images/logo.png" alt="Best UPVC Logo" class="logo-img">
+                <img src="images/logo.webp" alt="Best UPVC Logo" class="logo-img">
                 <span>Best UPVC Doors and Windows</span>
             </a>
             
@@ -115,8 +118,9 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
         <div class="container hero-container">
             <div class="hero-content reveal active">
                 <div class="badge">
@@ -153,14 +157,16 @@
             
             <div class="video-grid">
                 <div class="video-card reveal-left">
-                    <video controls poster="images/hero_bg.png" preload="metadata">
+                    <video controls poster="images/hero_bg.webp" preload="metadata">
                         <source src="videos/UPVC Doors & Windows.mp4" type="video/mp4">
+                        <track kind="captions" src="videos/captions.vtt" srclang="en" label="English" default>
                         Your browser does not support the video tag.
                     </video>
                 </div>
                 <div class="video-card reveal-right">
-                    <video controls poster="images/about_img_1.png" preload="metadata">
+                    <video controls poster="images/about_img_1.webp" preload="metadata">
                         <source src="videos/UPVC Doors and Windows.mp4" type="video/mp4">
+                        <track kind="captions" src="videos/captions.vtt" srclang="en" label="English" default>
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -208,8 +214,8 @@
     <section id="about" class="about">
         <div class="container about-container">
             <div class="about-images reveal-left">
-                <img src="images/about_img_1.png" alt="Large UPVC Windows in Living Room" class="about-img-main" loading="lazy">
-                <img src="images/about_img_2.png" alt="UPVC Window Frame Close-up" class="about-img-sub" loading="lazy">
+                <img src="images/about_img_1.webp" alt="Large UPVC Windows in Living Room" class="about-img-main" loading="lazy">
+                <img src="images/about_img_2.webp" alt="UPVC Window Frame Close-up" class="about-img-sub" loading="lazy">
                 <div class="experience-badge">
                     <div class="exp-icon"><i class="fa-solid fa-award"></i></div>
                     <div class="exp-text">
@@ -262,19 +268,19 @@
                     <i class="fa-solid fa-border-all service-icon"></i>
                     <h3>UPVC Windows</h3>
                     <p>Energy-efficient, soundproof, and weather-resistant UPVC windows available in various styles including sliding, casement, and tilt & turn. Custom made for your home.</p>
-                    <a href="windows.html" class="btn btn-primary" style="margin-top: 1.5rem; padding: 0.5rem 1rem; font-size: 0.9rem;">Learn More</a>
+                    <a href="windows.html" class="btn btn-primary" aria-label="Learn More about uPVC Windows" style="margin-top: 1.5rem; padding: 0.5rem 1rem; font-size: 0.9rem;">Learn More</a>
                 </div>
                 <div class="service-card reveal">
                     <i class="fa-solid fa-door-open service-icon"></i>
                     <h3>UPVC Doors</h3>
                     <p>Durable and highly secure UPVC doors perfect for main entrances, balconies, French doors, and internal spaces with modern aesthetic appeal.</p>
-                    <a href="doors.html" class="btn btn-primary" style="margin-top: 1.5rem; padding: 0.5rem 1rem; font-size: 0.9rem;">Learn More</a>
+                    <a href="doors.html" class="btn btn-primary" aria-label="Learn More about uPVC Doors" style="margin-top: 1.5rem; padding: 0.5rem 1rem; font-size: 0.9rem;">Learn More</a>
                 </div>
                 <div class="service-card reveal">
                     <i class="fa-solid fa-table-cells service-icon"></i>
                     <h3>Mosquito Sliding</h3>
                     <p>Integrated high-quality mesh sliding systems that keep mosquitoes and insects out while allowing fresh air and natural sunlight into your living spaces.</p>
-                    <a href="mosquito-sliding.html" class="btn btn-primary" style="margin-top: 1.5rem; padding: 0.5rem 1rem; font-size: 0.9rem;">Learn More</a>
+                    <a href="mosquito-sliding.html" class="btn btn-primary" aria-label="Learn More about uPVC Mosquito Sliding Mesh" style="margin-top: 1.5rem; padding: 0.5rem 1rem; font-size: 0.9rem;">Learn More</a>
                 </div>
             </div>
         </div>
@@ -327,8 +333,8 @@
     </section>
 
     <!-- Contact & Footer -->
-    <section id="contact" class="contact-footer">
-        <div class="container contact-container">
+    <section id="contact" class="contact-footer" style="padding-bottom: 0;">
+        <div class="container contact-container" style="padding-bottom: 4rem;">
             <div class="contact-info reveal-left">
                 <h2>Ready to upgrade your home?</h2>
                 <p>Get in touch with us for a free consultation and quote for your UPVC window and door requirements.</p>
@@ -337,21 +343,21 @@
                     <div class="contact-item">
                         <i class="fa-solid fa-phone"></i>
                         <div>
-                            <h4>Call Us</h4>
+                            <h3>Call Us</h3>
                             <p>+91 7893120016</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fa-solid fa-location-dot"></i>
                         <div>
-                            <h4>Visit Us</h4>
+                            <h3>Visit Us</h3>
                             <p>Miyapur 'X' Road, Shop No.312, Bollaram Rd, Hyderabad, Telangana, 500049</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fa-solid fa-envelope"></i>
                         <div>
-                            <h4>Email Us</h4>
+                            <h3>Email Us</h3>
                             <p>buntybusinessgroup@gmail.com</p>
                         </div>
                     </div>
@@ -371,42 +377,46 @@
                     </div>
                     <div class="form-group">
                         <input type="email" name="email" placeholder="Email Address (Optional)">
-                    </div>
-                    <div class="form-group">
-                        <select name="service" required>
-                            <option value="" disabled selected>Select Service</option>
-                            <option value="upvc-windows">UPVC Windows</option>
-                            <option value="upvc-doors">UPVC Doors</option>
-                            <option value="french-windows">French Windows</option>
-                            <option value="mosquito-sliding">Mosquito Sliding Door</option>
-                            <option value="repair">Repair & Maintenance</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" placeholder="Tell us about your requirements..." rows="4" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100">Submit Request <i class="fa-solid fa-paper-plane"></i></button>
-                </form>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <div class="container footer-bottom-inner" style="flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between;">
-                <div class="footer-badge">
-                    <a href="https://websitelaunches.com/site/bestupvc.in" target="_blank" rel="noopener">
-                        <img src="https://websitelaunches.com/badge/bestupvc.in.svg" alt="Established online - Public launch record" width="255" height="55">
-                    </a>
-                </div>
-                <p>&copy; 2026 Best UPVC. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://wa.me/917893120016" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
+                      </div>
+                      <div class="form-group">
+                          <label for="service" class="sr-only">Select Service</label>
+                          <select id="service" name="service" required>
+                              <option value="" disabled selected>Select Service</option>
+                              <option value="upvc-windows">UPVC Windows</option>
+                              <option value="upvc-doors">UPVC Doors</option>
+                              <option value="french-windows">French Windows</option>
+                              <option value="mosquito-sliding">Mosquito Sliding Door</option>
+                              <option value="repair">Repair & Maintenance</option>
+                              <option value="other">Other</option>
+                          </select>
+                      </div>
+                      <div class="form-group">
+                          <textarea name="message" placeholder="Tell us about your requirements..." rows="4" required></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-primary w-100">Submit Request <i class="fa-solid fa-paper-plane"></i></button>
+                  </form>
+              </div>
+          </div>
+      </section>
+      </main>
+      
+      <footer class="contact-footer" style="padding-top: 0;">
+          <div class="footer-bottom">
+              <div class="container footer-bottom-inner" style="flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between;">
+                  <div class="footer-badge">
+                      <a href="https://websitelaunches.com/site/bestupvc.in" target="_blank" rel="noopener">
+                          <img src="https://websitelaunches.com/badge/bestupvc.in.svg" alt="Established online - Public launch record" width="255" height="55">
+                      </a>
+                  </div>
+                  <p>&copy; 2026 Best UPVC. All rights reserved.</p>
+                  <div class="social-links">
+                      <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                      <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                      <a href="https://wa.me/917893120016" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                  </div>
+              </div>
+          </div>
+      </footer>
     
     <!-- Floating Action Buttons -->
     <div class="floating-actions" style="position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 10px; z-index: 1000;">

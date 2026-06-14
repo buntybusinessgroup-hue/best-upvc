@@ -27,13 +27,16 @@
     <meta name="twitter:image" content="https://www.bestupvc.in/images/hero_bg.png">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <link rel="apple-touch-icon" href="images/logo.png">
+    <link rel="icon" type="image/webp" href="images/logo.webp">
+    <link rel="apple-touch-icon" href="images/logo.webp">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link rel="preload" href="style.css" as="style">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -41,7 +44,7 @@
     <nav class="navbar scrolled">
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="Best UPVC Logo" class="logo-img">
+                <img src="images/logo.webp" alt="Best UPVC Logo" class="logo-img">
                 <span>Best UPVC</span>
             </a>
             
@@ -62,8 +65,9 @@
         </div>
     </nav>
 
-    <!-- Subpage Header -->
-    <header class="subpage-header">
+    <main>
+        <!-- Subpage Header -->
+        <header class="subpage-header">
         <div class="container">
             <h1 class="reveal active">Premium uPVC Windows</h1>
             <p class="reveal active" style="transition-delay: 0.1s">Engineered for absolute thermal efficiency, soundproofing, and durability in extreme weather.</p>
@@ -111,9 +115,10 @@
         </div>
     </section>
 
+    </main>
+
     <!-- Contact & Footer -->
-    <section id="contact" class="contact-footer">
-        <!-- Reusing standard footer... -->
+    <footer class="contact-footer">
         <div class="footer-bottom">
             <div class="container footer-bottom-inner" style="flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between;">
                 <div class="footer-badge">
@@ -129,7 +134,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </footer>
     
     <!-- Floating Action Buttons -->
     <div class="floating-actions" style="position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 10px; z-index: 1000;">

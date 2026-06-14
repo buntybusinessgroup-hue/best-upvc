@@ -76,6 +76,18 @@ p {
     justify-content: center;
 }
 
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 /* Buttons */
 .btn {
     display: inline-flex;
@@ -264,7 +276,7 @@ p {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background-image: url('images/hero_bg.png');
+    background-image: url('images/hero_bg.webp');
     background-size: cover;
     background-position: center;
     padding-top: 80px;
@@ -588,7 +600,7 @@ p {
     flex-shrink: 0;
 }
 
-.contact-item h4 {
+.contact-item h3 {
     color: var(--white);
     margin-bottom: 0.25rem;
 }
